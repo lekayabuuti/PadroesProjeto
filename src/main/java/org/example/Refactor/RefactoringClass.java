@@ -21,9 +21,7 @@ public class RefactoringClass {
             boolean sendEmail,
             boolean printReport) {
 
-        double total = 0;
-
-        total = productPrice * quantity;
+        double total = productPrice * quantity;
 
         CustomerType customerType = customer.getType();
         if (customerType.equals(CustomerType.REGULAR)) {
