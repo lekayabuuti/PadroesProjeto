@@ -59,13 +59,11 @@ public class RefactoringClass {
         double total = productPrice * quantity;
 
         CustomerType customerType = customer.getType();
-        if (customerType.equals(CustomerType.REGULAR)) {
-            total = total - (total * 0.05);
-        } else if (customerType.equals(CustomerType.PREMIUM)) {
-            total = total - (total * 0.10);
-        } else if (customerType.equals(CustomerType.VIP)) {
-            total = total - (total * 0.15);
-        }
+        total = total - switch (customerType) {
+            case REGULAR -> total * 0.05;
+            case PREMIUM -> total * 0.10;
+            case VIP -> total * 0.15;
+        };
 
         if (customer.getZipCode().startsWith("1")) {
             total = total + 10;

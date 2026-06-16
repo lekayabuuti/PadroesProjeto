@@ -5,6 +5,9 @@
 | 5, 20, 104, 121 | 8, 24, 107, 124 | Primitive Obsession | Substituindo os atributos de Customer pelo próprio Customer     |
 |36| | Temporary Field | Inicializaçao de valor inutil em total                          |
 |36|56 | Long Method | o processOrder faz muita coisa, retirei o calculo de total dali |
+|40|46| Switch Statements | O if foi simplificado em sua complexidade por um switch-case|
+
+
 # Code smells
 
 ### Bloaters
