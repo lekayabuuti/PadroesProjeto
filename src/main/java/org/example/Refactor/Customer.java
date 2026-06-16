@@ -5,12 +5,14 @@ public class Customer {
     private String email;
     private String address;
     private String zipCode;
+    private CustomerType type;
 
-    public Customer(String name, String email, String address, String zipCode) {
+    public Customer(String name, String email, String address, String zipCode, CustomerType type) {
         this.name = name;
         this.email = email;
         this.address = address;
         this.zipCode = zipCode;
+        this.type = type;
     }
 
     public String getName() {
@@ -43,5 +45,13 @@ public class Customer {
 
     public void setZipCode(String zipCode) {
         this.zipCode = zipCode;
+    }
+
+    public CustomerType getType() {
+        return type;
+    }
+
+    public void setType(CustomerType type) {
+        this.type = type;
     }
 }

@@ -18,7 +18,6 @@ public class RefactoringClass {
             String productName,
             double productPrice,
             int quantity,
-            int customerType,
             boolean sendEmail,
             boolean printReport) {
 
@@ -26,11 +25,12 @@ public class RefactoringClass {
 
         total = productPrice * quantity;
 
-        if (customerType == 1) {
+        CustomerType customerType = customer.getType();
+        if (customerType.equals(CustomerType.REGULAR)) {
             total = total - (total * 0.05);
-        } else if (customerType == 2) {
+        } else if (customerType.equals(CustomerType.PREMIUM)) {
             total = total - (total * 0.10);
-        } else if (customerType == 3) {
+        } else if (customerType.equals(CustomerType.VIP)) {
             total = total - (total * 0.15);
         }
 
