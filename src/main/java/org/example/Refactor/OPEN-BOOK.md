@@ -1,10 +1,10 @@
-| Linha Inicial   | Linha Final     | Nome do Code Smell  | Justificativa                                               |
-|-----------------|-----------------|---------------------|-------------------------------------------------------------|
-| 27              |                 | Primitive Obsession | O tipo de custumer pode ser um ENUM                         |
-| 31              | 34              | Comments            | Comentários inúteis quando existe o ENUM                    |
-| 5, 20, 104, 121 | 8, 24, 107, 124 | Primitive Obsession | Substituindo os atributos de Customer pelo próprio Customer |
-|36| | Temporary Field | Inicializaçao de valor inutil em total                      |
-
+| Linha Inicial   | Linha Final     | Nome do Code Smell  | Justificativa                                                   |
+|-----------------|-----------------|---------------------|-----------------------------------------------------------------|
+| 27              |                 | Primitive Obsession | O tipo de custumer pode ser um ENUM                             |
+| 31              | 34              | Comments            | Comentários inúteis quando existe o ENUM                        |
+| 5, 20, 104, 121 | 8, 24, 107, 124 | Primitive Obsession | Substituindo os atributos de Customer pelo próprio Customer     |
+|36| | Temporary Field | Inicializaçao de valor inutil em total                          |
+|36|56 | Long Method | o processOrder faz muita coisa, retirei o calculo de total dali |
 # Code smells
 
 ### Bloaters

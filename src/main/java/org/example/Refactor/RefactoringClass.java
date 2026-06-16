@@ -21,26 +21,7 @@ public class RefactoringClass {
             boolean sendEmail,
             boolean printReport) {
 
-        double total = productPrice * quantity;
-
-        CustomerType customerType = customer.getType();
-        if (customerType.equals(CustomerType.REGULAR)) {
-            total = total - (total * 0.05);
-        } else if (customerType.equals(CustomerType.PREMIUM)) {
-            total = total - (total * 0.10);
-        } else if (customerType.equals(CustomerType.VIP)) {
-            total = total - (total * 0.15);
-        }
-
-        if (customer.getZipCode().startsWith("1")) {
-            total = total + 10;
-        } else if (customer.getZipCode().startsWith("2")) {
-            total = total + 20;
-        } else if (customer.getZipCode().startsWith("3")) {
-            total = total + 30;
-        } else {
-            total = total + 40;
-        }
+        double total = calculaTotal(customer, productPrice, quantity);
 
         System.out.println("Customer: " + customer.getName());
         System.out.println("Email: " + customer.getEmail());
@@ -72,6 +53,30 @@ public class RefactoringClass {
         saveOrder(customer, productName, productPrice, quantity, total);
 
         totalSales += total;
+    }
+
+    private static double calculaTotal(Customer customer, double productPrice, int quantity) {
+        double total = productPrice * quantity;
+
+        CustomerType customerType = customer.getType();
+        if (customerType.equals(CustomerType.REGULAR)) {
+            total = total - (total * 0.05);
+        } else if (customerType.equals(CustomerType.PREMIUM)) {
+            total = total - (total * 0.10);
+        } else if (customerType.equals(CustomerType.VIP)) {
+            total = total - (total * 0.15);
+        }
+
+        if (customer.getZipCode().startsWith("1")) {
+            total = total + 10;
+        } else if (customer.getZipCode().startsWith("2")) {
+            total = total + 20;
+        } else if (customer.getZipCode().startsWith("3")) {
+            total = total + 30;
+        } else {
+            total = total + 40;
+        }
+        return total;
     }
 
     public void sendEmail(
