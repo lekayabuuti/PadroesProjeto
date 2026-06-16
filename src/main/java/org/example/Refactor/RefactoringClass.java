@@ -57,22 +57,16 @@ public class RefactoringClass {
 
     private static double calculaTotal(Customer customer, double productPrice, int quantity) {
         double total = productPrice * quantity;
-
-        CustomerType customerType = customer.getType();
-        total = total - switch (customerType) {
-            case REGULAR -> total * 0.05;
-            case PREMIUM -> total * 0.10;
-            case VIP -> total * 0.15;
-        };
+        total = total - (total * customer.getType().getFatorMultiplicacao());
 
         if (customer.getZipCode().startsWith("1")) {
-            total = total + 10;
+            total += 10;
         } else if (customer.getZipCode().startsWith("2")) {
-            total = total + 20;
+            total += 20;
         } else if (customer.getZipCode().startsWith("3")) {
-            total = total + 30;
+            total += 30;
         } else {
-            total = total + 40;
+            total += 40;
         }
         return total;
     }
